@@ -34,15 +34,13 @@ p {
   margin: 50px auto;
 }
 
-.text-on-image {
-  position: absolute;
+.text {
   font-family: var(--font-mono);
   width: 70%;
   left: 15%;
   right: 30%;
   bottom: 30%;
-  transform: inherit;
   background-color: transparent;
-  font-size: 5vw;
+  font-size: 1.5vw;
   text-align: center;
 }

@@ -34,8 +34,8 @@ export default function RootLayout({ children }) {
                 Experiences
               </Link>
 
-              <Link href="/about" className="navText">
-                About
+              <Link href="/contact" className="navText">
+                Contact
               </Link>
 
               <Link href="/profile" className="navText">
