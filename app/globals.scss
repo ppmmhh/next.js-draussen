@@ -1,0 +1,107 @@
+@import '@fontsource/quicksand';
+
+:root {
+  --max-width: 1000px;
+  --font-mono: 'quicksand';
+  --color-background: #edff97;
+  --color-button: #0a46ea;
+  --primary-color: #000000;
+  --secondary-color: #43870b;
+  --text-size: 20px;
+}
+
+//@media (prefers-color-scheme: dark) {
+//:root {
+// };
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background: #edff97;
+}
+
+header {
+  position: sticky;
+}
+
+nav {
+  font-family: var(--font-mono);
+  line-height: 4rem;
+  color: var(--primary-color);
+  justify-content: space-evenly;
+  padding: 1px;
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+
+  .navText {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo {
+    width: 10rem;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+
+    .cart-icon {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer {
+  width: 100vw;
+  height: 4rem;
+  position: sticky;
+  bottom: 0;
+  background-color: var(--color-background);
+  font-family: var(--font-mono);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+button {
+  background-color: var(--color-button);
+  color: white;
+  padding: 10px 15px;
+  border: 2px solid var(--color-button);
+  font-family: var(--font-family-text);
+
+  &:hover {
+    background-color: edff97;
+    border: 2px solid var(--color-button);
+    cursor: pointer;
+    color: var(--color-button);
+  }
+}
+
+img {
+  display: inline;
+  align-items: start;
+}

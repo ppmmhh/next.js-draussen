@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+}
+
+.image-wrapper {
+  flex: 0; /* This will make the images take up equal space */
+  margin-right: 0px; /* Adjust spacing between images */
+}
+
+.image {
+  max-width: 150%; /* Ensure images don't exceed their container */
+}
+
+p {
+  font-size: var(--text-size);
+  font-family: var(--font-mono);
+  display: block;
+  line-height: 33px;
+}
+
+.sectionContainer {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 40px;
+  text-align: center;
+  display: block;
+  max-width: 1000px;
+}
+
+.sectionHeader {
+  width: 80vw;
+  margin: 50px auto;
+}
+
+.text-on-image {
+  position: absolute;
+  font-family: var(--font-mono);
+  width: 70%;
+  left: 15%;
+  right: 30%;
+  bottom: 30%;
+  transform: inherit;
+  background-color: transparent;
+  font-size: 5vw;
+  text-align: center;
+}

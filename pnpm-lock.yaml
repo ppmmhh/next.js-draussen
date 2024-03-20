@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@fontsource/quicksand':
+    specifier: ^5.0.17
+    version: 5.0.17
   next:
     specifier: 14.1.3
     version: 14.1.3(@babel/core@7.24.1)(react-dom@18.2.0)(react@18.2.0)(sass@1.72.0)
@@ -39,7 +42,7 @@ devDependencies:
     version: 16.2.1(typescript@5.4.2)
   stylelint-config-upleveled:
     specifier: ^1.1.0
-    version: 1.1.0(postcss@8.4.31)(stylelint@16.2.1)
+    version: 1.1.0(postcss@8.4.36)(stylelint@16.2.1)
   typescript:
     specifier: ^5.4.2
     version: 5.4.2
@@ -328,6 +331,10 @@ packages:
     resolution: {integrity: sha512-Ys+3g2TaW7gADOJzPt83SJtCDhMjndcDMFVQ/Tj9iA1BfJzFKD9mAUXT3OenpuPHbI6P/myECxRJrofUsDx/5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
+
+  /@fontsource/quicksand@5.0.17:
+    resolution: {integrity: sha512-09AIwswP3pT4MJ2aLTAt/+nys6yb02MAOCfHhrAIRQP33iB2aWAVgsU5SmK6D2K6tOUG3iaEs6AghT5r/w8zKA==}
+    dev: false
 
   /@humanwhocodes/config-array@0.11.14:
     resolution: {integrity: sha512-3T8LkOmg45BV5FICb15QQMsyUSWrQ8AygVfC7ZG32zOalnqrilm018ZVCw0eapXux8FtA33q8PSRSstjee3jSg==}
@@ -3308,13 +3315,13 @@ packages:
       postcss: 8.4.36
     dev: true
 
-  /postcss-scss@4.0.9(postcss@8.4.31):
+  /postcss-scss@4.0.9(postcss@8.4.36):
     resolution: {integrity: sha512-AjKOeiwAitL/MXxQW2DliT28EKukvvbEWx3LBmJIRN8KfBGZbRTxNYW0kSqi1COiTZ57nZ9NW06S6ux//N1c9A==}
     engines: {node: '>=12.0'}
     peerDependencies:
       postcss: ^8.4.29
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.36
     dev: true
 
   /postcss-selector-parser@6.0.16:
@@ -3325,13 +3332,13 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
-  /postcss-styled-syntax@0.6.4(postcss@8.4.31):
+  /postcss-styled-syntax@0.6.4(postcss@8.4.36):
     resolution: {integrity: sha512-uWiLn+9rKgIghUYmTHvXMR6MnyPULMe9Gv3bV537Fg4FH6CA6cn21WMjKss2Qb98LUhT847tKfnRGG3FhSOgUQ==}
     engines: {node: '>=14.17'}
     peerDependencies:
       postcss: ^8.4.21
     dependencies:
-      postcss: 8.4.31
+      postcss: 8.4.36
       typescript: 5.4.2
     dev: true
 
@@ -3346,6 +3353,7 @@ packages:
       nanoid: 3.3.7
       picocolors: 1.0.0
       source-map-js: 1.1.0
+    dev: false
 
   /postcss@8.4.36:
     resolution: {integrity: sha512-/n7eumA6ZjFHAsbX30yhHup/IMkOmlmvtEi7P+6RMYf+bGJSUHc3geH4a0NSZxAz/RJfiS9tooCTs9LAVYUZKw==}
@@ -3851,7 +3859,7 @@ packages:
       stylelint-scss: 6.2.1(stylelint@16.2.1)
     dev: true
 
-  /stylelint-config-recommended-scss@14.0.0(postcss@8.4.31)(stylelint@16.2.1):
+  /stylelint-config-recommended-scss@14.0.0(postcss@8.4.36)(stylelint@16.2.1):
     resolution: {integrity: sha512-HDvpoOAQ1RpF+sPbDOT2Q2/YrBDEJDnUymmVmZ7mMCeNiFSdhRdyGEimBkz06wsN+HaFwUh249gDR+I9JR7Onw==}
     engines: {node: '>=18.12.0'}
     peerDependencies:
@@ -3861,8 +3869,8 @@ packages:
       postcss:
         optional: true
     dependencies:
-      postcss: 8.4.31
-      postcss-scss: 4.0.9(postcss@8.4.31)
+      postcss: 8.4.36
+      postcss-scss: 4.0.9(postcss@8.4.36)
       stylelint: 16.2.1(typescript@5.4.2)
       stylelint-config-recommended: 14.0.0(stylelint@16.2.1)
       stylelint-scss: 6.2.1(stylelint@16.2.1)
@@ -3877,17 +3885,17 @@ packages:
       stylelint: 16.2.1(typescript@5.4.2)
     dev: true
 
-  /stylelint-config-upleveled@1.1.0(postcss@8.4.31)(stylelint@16.2.1):
+  /stylelint-config-upleveled@1.1.0(postcss@8.4.36)(stylelint@16.2.1):
     resolution: {integrity: sha512-EkdNnCcid4iBajNlLjEP1QZepo+smltDY5Bc/ThVJk6qX/NyMdvffiA2jYVekNwKoG13MSqM9+Ywj19jceWLKQ==}
     engines: {node: '>=20.9.0'}
     peerDependencies:
       stylelint: ^16.2.1
     dependencies:
-      postcss-styled-syntax: 0.6.4(postcss@8.4.31)
+      postcss-styled-syntax: 0.6.4(postcss@8.4.36)
       stylelint: 16.2.1(typescript@5.4.2)
       stylelint-config-css-modules: 4.4.0(stylelint@16.2.1)
       stylelint-config-recommended: 14.0.0(stylelint@16.2.1)
-      stylelint-config-recommended-scss: 14.0.0(postcss@8.4.31)(stylelint@16.2.1)
+      stylelint-config-recommended-scss: 14.0.0(postcss@8.4.36)(stylelint@16.2.1)
     transitivePeerDependencies:
       - postcss
     dev: true
