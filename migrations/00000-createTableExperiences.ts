@@ -5,7 +5,7 @@ export type Experience = {
   title: string;
   workshop_date: string;
   timeframe: string;
-  startingpoint: string | null;
+  meetingpoint: string | null;
   category: string | null;
   image: string;
   description: string;
@@ -14,7 +14,7 @@ export type Experience = {
 export async function up(sql: Sql) {
   await sql`
     CREATE TABLE experiences (
-      id integer PRIMARY key generated always AS identity,
+      id integer PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
       title varchar(70) NOT NULL,
       workshop_date varchar(40) NOT NULL,
       timeframe varchar(40) NOT NULL,
