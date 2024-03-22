@@ -4,8 +4,8 @@ import React from 'react';
 import { getExperienceInsecure } from '../../../database/experiences';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
-// import SetQuantityForm from './SetQuantityForm.tsx';
 import styles from './experiencePage.module.scss';
+import SetQuantityForm from './SetQuantityForm.tsx';
 
 export async function generateMetadata(props) {
   const singleExperience = await getExperienceInsecure(
@@ -29,7 +29,7 @@ export default async function experiencePage(props) {
   // get cookie and parse it
   const experiencesQuantityCookie = getCookie('quantityCookie');
 
-  const experiencesQuantity = !experiencessQuantityCookie
+  const experiencesQuantity = !experiencesQuantityCookie
     ? []
     : parseJson(experiencesQuantityCookie);
 
