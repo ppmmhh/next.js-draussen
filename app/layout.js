@@ -42,9 +42,7 @@ export default function RootLayout({ children }) {
                 Profile
               </Link>
 
-              <div className="cart-icon" data-test-id="cart-link">
-                <a href="/cart"></a>
-              </div>
+              <div className="cart-icon" data-test-id="cart-link"></div>
             </nav>
           </div>
         </header>
