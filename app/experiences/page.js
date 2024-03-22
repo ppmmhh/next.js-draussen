@@ -9,7 +9,7 @@ export const metadata = {
   description: 'This page shows all the upcoming experiences',
 };
 
-export default async function ExperiencessPage() {
+export default async function ExperiencesPage() {
   const experiences = await getExperiencesInsecure();
 
   return (
@@ -25,7 +25,7 @@ export default async function ExperiencessPage() {
                 <Link
                   href={`/experiences/${experience.id}`}
                   data-test-id={`experience-${experience.id}`}
-                  className={styles.experienceItem}
+                  // className={styles.experienceItem}
                 >
                   <Image
                     src={experience.image}
@@ -40,16 +40,6 @@ export default async function ExperiencessPage() {
                     </div>
                     <div>Date: {experience.workshop_date}</div>
                     <div>Time: {experience.timeframe}</div>
-                    <br />
-                    <div>
-                      {experience.description.length > 100
-                        ? experience.description.slice(
-                            0,
-                            experience.description.lastIndexOf(' ', 300),
-                          )
-                        : experience.description}
-                      {experience.description.length > 300 && ' [...]'}
-                    </div>
                   </div>
                 </Link>
               </div>
