@@ -1,11 +1,15 @@
+import crypto from 'node:crypto';
 import bcrypt from 'bcrypt';
+import { cookies } from 'next/headers';
 import { NextRequest, NextResponse } from 'next/server';
+import { createSessionInsecure } from '../../../../database/sessions';
 import {
   createUserInsecure,
   getUserByUsernameInsecure,
   User,
 } from '../../../../database/users';
 import { userSchema } from '../../../../migrations/00002-createTableUsers';
+import { secureCookieOptions } from '../../../../util/cookies';
 
 export type RegisterResponseBodyPost =
   | {
@@ -21,7 +25,6 @@ export async function POST(
   // Task: Implement the user registration workflow
   // 1. Get the user data from the request
   const body = await request.json();
-  console.log('Body: ', body);
 
   // 2. Validate the user data with zod
   const result = userSchema.safeParse(body);
@@ -40,12 +43,12 @@ export async function POST(
 
   if (user) {
     return NextResponse.json(
-      { errors: [{ message: 'username is already taken' }] },
+      {
+        errors: [{ message: 'username is already taken' }],
+      },
       { status: 403 },
     );
   }
-
-  // const password = undefined;
 
   // 4. Hash the plain password from the user
   const passwordHash = await bcrypt.hash(result.data.password, 12);
@@ -56,7 +59,7 @@ export async function POST(
     result.data.username,
     passwordHash,
   );
-  console.log('User: ', newUser);
+
   if (!newUser) {
     return NextResponse.json(
       { errors: [{ message: 'Error creating the new user' }] },
@@ -64,7 +67,22 @@ export async function POST(
     );
   }
 
-  return NextResponse.json({
-    user: newUser,
+  //  Coming in subsequent lecture
+  // 6. Create a token
+  const token = crypto.randomBytes(100).toString('base64');
+
+  // 7. Create the session record
+  const session = await createSessionInsecure(newUser.id, token);
+
+  if (!session) {
+    return NextResponse.json({
+      user: newUser,
+    });
+  }
+
+  cookies().set({
+    name: 'sessionToken',
+    value: session.token,
+    ...secureCookieOptions,
   });
 }
