@@ -5,11 +5,11 @@ import { getExperiencesInsecure } from '../../database/experiences';
 import styles from './page.module.scss';
 
 export const metadata = {
-  title: 'Experience page',
-  description: 'This page shows all the upcoming experiences',
+  title: 'Experiences Page',
+  description: 'Discover your next Outdoor Experience',
 };
 
-export default async function ExperiencesPage() {
+export default async function ExperiencesOverview() {
   const experiences = await getExperiencesInsecure();
 
   return (

@@ -56,7 +56,7 @@ export const getUserWithPasswordHashByUsernameInsecure = cache(
 
 export const createUserInsecure = cache(
   async (username: string, email: string, passwordHash: string) => {
-    const [user] = await sql<Pick<User, 'id' | 'username'>[]>`
+    const [user] = await sql<Pick<User, 'id' | 'email' | 'username'>[]>`
       INSERT INTO
         users (
           username,
@@ -71,6 +71,7 @@ export const createUserInsecure = cache(
         )
       RETURNING
         id,
+        email,
         username
     `;
     return user;

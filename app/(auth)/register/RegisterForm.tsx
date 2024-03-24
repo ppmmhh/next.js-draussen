@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-// import ErrorMessage from '../../../app/ErrorMessage';
-// import { getSafeReturnToPath } from '../../../util/validation';
+import ErrorMessage from '../../../app/ErrorMessage';
+import { getSafeReturnToPath } from '../../../util/validation';
 import { RegisterResponseBodyPost } from '../api/register/route';
 
 type Props = { returnTo?: string | string[] };
@@ -12,7 +12,7 @@ export default function RegisterForm(props: Props) {
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  // const [errors, setErrors] = useState<{ message: string }[]>([]);
+  const [errors, setErrors] = useState<{ message: string }[]>([]);
 
   const router = useRouter();
 
@@ -22,9 +22,9 @@ export default function RegisterForm(props: Props) {
     const response = await fetch('api/register', {
       method: 'POST',
       body: JSON.stringify({
-        email: email,
-        username: username,
-        password: password,
+        email,
+        username,
+        password,
       }),
       headers: {
         'Content-Type': 'application/json',
@@ -33,14 +33,7 @@ export default function RegisterForm(props: Props) {
 
     const data: RegisterResponseBodyPost = await response.json();
 
-    // if ('errors' in data) {
-    //  setErrors(data.errors);
-    //  return;
-    // }
-    // router.push(
-    // getSafeReturnToPath(props.returnTo)
-    //`/profile/${data.user.username}`,
-    // );
+    router.push(getSafeReturnToPath(props.returnTo) || `/`);
 
     router.refresh();
   }
@@ -66,6 +59,11 @@ export default function RegisterForm(props: Props) {
       </label>
 
       <button>Register</button>
+      {errors.map((error) => (
+        <div className="error" key={`error-${error.message}`}>
+          <ErrorMessage>{error.message}</ErrorMessage>
+        </div>
+      ))}
     </form>
   );
 }

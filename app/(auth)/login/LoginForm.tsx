@@ -1,13 +1,19 @@
 'use client';
-
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import { getSafeReturnToPath } from '../../../util/validation';
-// import ErrorMessage from '../../ErrorMessage';
-import { LoginResponseBodyPost } from '../api/login/route';
+import { User } from '../../../database/users';
+import ErrorMessage from '../../ErrorMessage';
 import LoginButton from './LoginButton';
 
 type Props = { returnTo?: string | string[] };
+
+export type LoginResponseBodyPost =
+  | {
+      user: Pick<User, 'username'>;
+    }
+  | {
+      errors: { message: string }[];
+    };
 
 export default function LoginForm(props: Props) {
   const [username, setUsername] = useState('');
@@ -18,15 +24,14 @@ export default function LoginForm(props: Props) {
   async function handleLogin(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const response = await fetch('/api/login', {
+    const response = await fetch('api/login', {
       method: 'POST',
       body: JSON.stringify({
         username,
         password,
       }),
-
       headers: {
-        'Content-Type': 'application/json',
+        'Content-type': 'application/json',
       },
     });
 
@@ -37,10 +42,10 @@ export default function LoginForm(props: Props) {
       return;
     }
 
-    router.push(
-      getSafeReturnToPath(props.returnTo) || `/profile/${data.user.username}`,
-    );
-
+    router.push(`/`);
+    if (props.returnTo) {
+      router.push(props.returnTo);
+    }
     router.refresh();
   }
 
