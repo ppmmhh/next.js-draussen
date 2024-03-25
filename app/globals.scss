@@ -4,15 +4,11 @@
   --max-width: 1000px;
   --font-mono: 'quicksand';
   --color-background: #edff97;
-  --color-button: #0a46ea;
+  --color-button: transparent;
   --primary-color: #000000;
-  --secondary-color: #43870b;
+  --secondary-color: #6d2965;
   --text-size: 20px;
 }
-
-//@media (prefers-color-scheme: dark) {
-//:root {
-// };
 
 * {
   box-sizing: border-box;
@@ -88,10 +84,10 @@ footer {
 
 button {
   background-color: var(--color-button);
-  color: white;
-  padding: 10px 15px;
-  border: 2px solid var(--color-button);
-  font-family: var(--font-family-text);
+  color: rgb(0, 0, 0);
+  padding: 10px 45px;
+  border: 10px solid var(--color-button);
+  font-family: var(--font-mono);
 
   &:hover {
     background-color: edff97;
