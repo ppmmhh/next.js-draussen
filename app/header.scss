@@ -1,49 +1,47 @@
-.container {
-  display: flex;
-  justify-content: center;
-  align-content: stretch;
-}
-
-.image-wrapper {
-  flex: 0; /* This will make the images take up equal space */
-  margin-right: 0px; /* Adjust spacing between images */
-}
-
-.image {
-  max-width: 150%; /* Ensure images don't exceed their container */
-}
-
-p {
-  font-size: var(--text-size);
-  font-family: var(--font-mono);
-  display: block;
-  line-height: 33px;
-}
+@import '@fontsource/quicksand';
 
 .sectionContainer {
-  margin-left: auto;
-  margin-right: auto;
-  padding: 40px;
-  text-align: center;
-  display: block;
-  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
 }
 
-.sectionHeader {
-  width: 80vw;
-  margin: 50px auto;
+.logo {
+  width: 100px; /* Adjust as needed */
+  height: auto; /* Adjust as needed */
+  margin-left: 50px; /* Add margin to create space between logo and text */
 }
 
 .text {
   font-family: var(--font-mono);
-  width: 70%;
-  right: 30%;
-  bottom: 30%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: transparent;
-  font-size: 1.5vw;
+  font-size: 30px; /* Adjust as needed */
   text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 50px; /* Add margin to create space between logo and text */
+}
+
+button {
+  padding: 10px 45px;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: 3px solid black;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  &:hover {
+    background-color: black;
+    border: 3px solid #edff97;
+    cursor: pointer;
+    color: #edff97;
+  }
+}
+
+.container {
+  text-align: center;
+  margin-top: auto; /* Push the container to the bottom */
 }
