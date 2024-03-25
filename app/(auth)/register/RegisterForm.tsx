@@ -2,8 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
-import ErrorMessage from '../../../app/ErrorMessage';
 import { getSafeReturnToPath } from '../../../util/validation';
+import ErrorMessage from '../../ErrorMessage';
 import { RegisterResponseBodyPost } from '../api/register/route';
 
 type Props = { returnTo?: string | string[] };
@@ -18,14 +18,15 @@ export default function RegisterForm(props: Props) {
 
   async function handleRegister(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log('Test');
-    const response = await fetch('api/register', {
+
+    const response = await fetch('/api/register', {
       method: 'POST',
       body: JSON.stringify({
         email,
         username,
         password,
       }),
+
       headers: {
         'Content-Type': 'application/json',
       },
@@ -33,7 +34,21 @@ export default function RegisterForm(props: Props) {
 
     const data: RegisterResponseBodyPost = await response.json();
 
-    router.push(getSafeReturnToPath(props.returnTo) || `/`);
+    if ('errors' in data) {
+      setErrors(data.errors);
+      return;
+    }
+
+    // This is not the secure way of doing returnTo
+    // router.push(`/profile/${data.user.username}`);
+    // if (props.returnTo) {
+    //   console.log('Checks Return to: ', props.returnTo);
+    //   router.push(props.returnTo);
+    // }
+
+    router.push(
+      getSafeReturnToPath(props.returnTo) || `/profile/${data.user.username}`,
+    );
 
     router.refresh();
   }
@@ -59,6 +74,7 @@ export default function RegisterForm(props: Props) {
       </label>
 
       <button>Register</button>
+
       {errors.map((error) => (
         <div className="error" key={`error-${error.message}`}>
           <ErrorMessage>{error.message}</ErrorMessage>
