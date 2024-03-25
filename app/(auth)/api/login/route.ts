@@ -28,8 +28,6 @@ export async function POST(
 ): Promise<NextResponse<LoginResponseBodyPost>> {
   // Task: Implement the user login workflow
 
-  // 4. Validate the user password by comparing with hashed password
-
   // 1. Get the user data from the request
   const body = await request.json();
 

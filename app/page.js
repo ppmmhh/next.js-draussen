@@ -8,6 +8,7 @@ export default function Home() {
       <div>
         <Header />
       </div>
+      <footer>© draussen 2024</footer>
     </div>
   );
 }
