@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { User } from '../../../database/users';
 import ErrorMessage from '../../ErrorMessage';
 import LoginButton from './LoginButton';
+import styles from './LoginForm.module.scss';
 
 type Props = { returnTo?: string | string[] };
 
@@ -42,7 +43,7 @@ export default function LoginForm(props: Props) {
       return;
     }
 
-    router.push(`/`);
+    router.push(`/experiences`);
     if (props.returnTo) {
       router.push(props.returnTo);
     }
@@ -51,15 +52,17 @@ export default function LoginForm(props: Props) {
 
   return (
     <section>
-      <div>
-        <h1>Login to your account</h1>
+      <div className={styles.container}>
+        <h1 className={styles.form}>Login</h1>
         <form onSubmit={async (event) => await handleLogin(event)}>
           <div>
             <div>
               <label>
                 <div>Username</div>
                 <input
+                  placeholder="username"
                   type="username"
+                  className={styles.inputField}
                   onChange={(event) => setUsername(event.currentTarget.value)}
                 />
               </label>
@@ -73,15 +76,16 @@ export default function LoginForm(props: Props) {
                 <input
                   placeholder="••••••••"
                   type="password"
+                  className={styles.inputField}
                   onChange={(event) => setPassword(event.currentTarget.value)}
                 />
               </label>
             </div>
           </div>
-          <div className="text-center">
+          <div>
             <LoginButton />
           </div>
-          <p>
+          <p className={styles.text}>
             Don't have an account already? <a href="/register">Register here</a>
           </p>
           <div>

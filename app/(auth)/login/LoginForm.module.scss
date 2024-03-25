@@ -1,0 +1,49 @@
+@import '@fontsource/quicksand';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #add8e6;
+  font-family: 'quicksand';
+}
+
+.form {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  border: 1px solid var(--secondary-color);
+  border-radius: 15px;
+  padding: 10px 15px;
+  background-color: white;
+  margin: 10px;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  padding: 10px 45px;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  border: 3px solid black;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+
+  &:hover {
+    background-color: black;
+    border: 3px solid #add8e6;
+    cursor: pointer;
+    color: #add8e6;
+  }
+}
+
+.text {
+  text-align: center;
+}
