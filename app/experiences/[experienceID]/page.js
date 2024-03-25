@@ -45,6 +45,8 @@ export default async function experiencePage(props) {
           <div className={styles.textHighlight}>
             <div>Date: {singleExperience.workshop_date}</div>
             <div>Time: {singleExperience.timeframe}</div>
+            <div>Meetingpoint: {singleExperience.meetingpoint}</div>
+            <div>Category: {singleExperience.category}</div>
           </div>
           <div className={styles.description}>
             {singleExperience.description}

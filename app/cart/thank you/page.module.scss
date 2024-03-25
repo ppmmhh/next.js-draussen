@@ -1,0 +1,16 @@
+.sectionContainer {
+  width: 1140px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 70vh;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+
+  .thankyouText {
+    font-family: var(--font-mono);
+    padding-top: 20px;
+  }
+}

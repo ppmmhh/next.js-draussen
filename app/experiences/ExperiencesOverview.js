@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import ExperienceFilter from './ExperienceFilter';
+import React from 'react';
+import { getExperiencesInsecure } from '../../database/experiences';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -8,22 +9,17 @@ export const metadata = {
   description: 'Discover your next Outdoor Experience',
 };
 
-
+export default async function ExperiencesPage() {
+  const experiences = await getExperiencesInsecure();
 
   return (
     <div className={styles.sectionContainer}>
       <div>
         <h1>Upcoming Experiences</h1>
-        <input
-          placeholder="Search by Category"
-          value={filter}
-          onChange={handleFilterChange}
-          className={styles.filterInput}
-        />
       </div>
       <div>
         <div className={styles.expContainer}>
-          {filteredExperiences.map((experience) => (
+          {experiences.map((experience) => (
             <div key={`experience-${experience.id}`}>
               <Link
                 href={`/experiences/${experience.id}`}
@@ -52,5 +48,3 @@ export const metadata = {
     </div>
   );
 }
-
-export default ExperiencesOverview;
