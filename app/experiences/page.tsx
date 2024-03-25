@@ -8,7 +8,7 @@ export const metadata = {
   description: 'Discover your next Outdoor Experience',
 };
 
-export default async function Experiencesage() {
+export default async function ExperiencesPage() {
   // This is no longer needed because we no run a secure query
   // const animals = await getAnimalsInsecure();
 
