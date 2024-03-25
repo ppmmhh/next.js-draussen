@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { getExperiencesInsecure } from '../../database/experiences';
+import Navbar from '../Navbar'; // Corrected import statement
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -14,6 +15,11 @@ export default async function ExperiencesPage() {
 
   return (
     <div className={styles.sectionContainer}>
+      <div>
+        <header>
+          <Navbar />
+        </header>
+      </div>
       <div>
         <h1>Upcoming Experiences</h1>
       </div>
