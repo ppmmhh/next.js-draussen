@@ -1,49 +1,50 @@
+@import '@fontsource-variable/Lexend';
+
 .navbar {
   background-color: transparent;
   padding: 10px;
   position: sticky;
   z-index: 100;
-  font-family: var(--font-mono);
-}
-
-.navBar {
+  font-family: 'lexend';
+  flex-wrap: nowrap;
   display: flex;
-  justify-content: space-between;
-  align-items: center; /* Align items vertically */
-  position: sticky;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .navLinks {
   display: flex;
-  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;
   font-family: var(--font-mono);
   font-size: medium;
   align-items: center;
+  flex: 1; /* Occupy remaining space */
+  justify-content: space-evenly; /* Center and distribute space evenly */
 }
 
 .navItem {
-  margin-right: 20px;
   text-transform: uppercase;
-  padding-left: 15px;
 }
 
 .navItem a {
   color: #22282f;
   text-decoration: none;
-  font-family: var(--font-mono);
   font-size: 1rem;
-  text-transform: none;
-  align-items: center;
 }
 
-.authButton {
+.icon {
+  opacity: 1;
+  margin-left: 10rem; /* Adjust as needed */
   display: flex;
-  align-items: center; /* Align button vertically with other items */
-  margin-right: 20px; /* Add margin to separate button from other items */
+  align-items: center;
+  margin-top: -5px; /* Adjust the margin to raise the icon */
 }
 
 .logo {
+  display: flex;
+  justify-content: flex-start; /* Move the logo to the left */
+  margin-right: auto; /* Push other items to the right */
+  margin-left: 20px;
 }

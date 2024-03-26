@@ -1,23 +1,22 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import LoginButton from './(auth)/login/LoginButton';
 import styles from './navbar.module.scss';
 
 export default function Navbar() {
   return (
     <div>
-      <header className={styles.navbar}>
+      <header>
         <nav className={styles.navbar}>
+          <img
+            className={styles.logo}
+            src="./images/logo_wo_bg.png"
+            width={155}
+            height={65}
+            alt="draussen Logo"
+          />
+
           <ul className={styles.navLinks}>
-            <li className={styles.logo}>
-              <Image
-                src="/../logo_wo_bg.png"
-                width={60}
-                height={50}
-                alt="draussen Logo"
-              />
-            </li>
             <li className={styles.navItem}>
               <Link href="/experiences">Experiences</Link>
             </li>
@@ -28,8 +27,15 @@ export default function Navbar() {
               <Link href="/cart">Cart</Link>
             </li>
           </ul>
-          <div className={styles.authButton}>
-            <LoginButton />
+          <div className="icon">
+            <a href="/">
+              <img
+                src="./images/logout.png"
+                height={20}
+                width={20}
+                alt="logout"
+              />
+            </a>
           </div>
         </nav>
       </header>

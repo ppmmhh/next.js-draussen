@@ -1,6 +1,9 @@
+// ExperiencesFilter.js
+
 'use client';
 
 import { useState } from 'react';
+import styles from './ExperiencesFilter.module.scss';
 
 function ExperiencesFilter() {
   // State to keep track of selected categories
@@ -36,37 +39,44 @@ function ExperiencesFilter() {
 
   // Render checkbox form
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        <input
-          type="checkbox"
-          value="Hike"
-          onChange={handleCategoryChange}
-          checked={selectedCategories.includes('Hike')}
-        />
-        Hike
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          value="Ride"
-          onChange={handleCategoryChange}
-          checked={selectedCategories.includes('Ride')}
-        />
-        Ride
-      </label>
-      <label>
-        <input
-          type="checkbox"
-          value="Walk"
-          onChange={handleCategoryChange}
-          checked={selectedCategories.includes('Walk')}
-        />
-        Walk
-      </label>
-      {/* Add more checkboxes for additional categories */}
-      <button type="submit">Apply Filter</button>
-    </form>
+    <div className={styles.filterContainer}>
+      <form onSubmit={handleSubmit} className={styles.form}>
+        <label>
+          <input
+            type="radio"
+            value="Hike"
+            onChange={handleCategoryChange}
+            className={styles.checkField}
+            checked={selectedCategories.includes('Hike')}
+          />
+          Hike
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="Ride"
+            onChange={handleCategoryChange}
+            className={styles.checkField}
+            checked={selectedCategories.includes('Ride')}
+          />
+          Ride
+        </label>
+        <label>
+          <input
+            type="radio"
+            value="Walk"
+            onChange={handleCategoryChange}
+            className={styles.checkField}
+            checked={selectedCategories.includes('Walk')}
+          />
+          Walk
+        </label>
+      </form>
+
+      <button className={styles.button} type="submit">
+        Filter
+      </button>
+    </div>
   );
 }
 

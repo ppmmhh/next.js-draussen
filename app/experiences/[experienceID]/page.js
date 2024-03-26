@@ -4,7 +4,7 @@ import React from 'react';
 import { getExperienceInsecure } from '../../../database/experiences';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
-import Navbar from '../../components/navbar';
+import Navbar from '../../navbar';
 import styles from './experiencePage.module.scss';
 import SetQuantityForm from './SetQuantityForm.tsx';
 
@@ -40,6 +40,9 @@ export default async function experiencePage(props) {
 
   return (
     <div className={styles.sectionContainer}>
+      <div>
+        <Navbar />
+      </div>
       <h1 className={styles.h1}>{singleExperience.title}</h1>
       <div className={styles.contentBoxGrid}>
         <div>

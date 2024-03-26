@@ -1,8 +1,14 @@
-import './header.scss';
 import React from 'react';
 import LoginButton from '../app/(auth)/login/LoginButton';
+import Slideshow from './components/Slideshow'; // Adjust the path accordingly
 
-export default function Header() {
+const images = [
+  { src: '/images/wien1.jpeg', alt: 'Vienna postcard' },
+  { src: '/images/wien02.jpeg', alt: 'Vienna postcard' },
+  { src: '/images/wien03.webp', alt: 'Vienna postcard' },
+];
+
+const Header = () => {
   return (
     <div className="sectionContainer">
       <div className="logo">
@@ -22,9 +28,10 @@ export default function Header() {
         </a>
       </div>
 
-      <div className="container">
-        <img src="/images/wien1.jpeg" alt="vienna postcard" />
-      </div>
+      {/* Include the Slideshow component and pass the images array as a prop */}
+      <Slideshow images={images} />
     </div>
   );
-}
+};
+
+export default Header;

@@ -1,12 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router'; // Import useRouter from next/router
 import React from 'react';
 import { getExperiencesInsecure } from '../../database/experiences';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import { clearCookies } from './actions_clearcookies';
 import ChangeQuantity from './ChangeQuantity';
+import CheckoutButton from './CheckoutButton';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
@@ -16,15 +15,13 @@ export const metadata = {
 };
 
 export default async function CartPage() {
-  const router = useRouter(); // Initialize useRouter
-
   const experiences = await getExperiencesInsecure();
 
   // get the cookies
   const cookie = getCookie('cart');
   const experienceCookies = !cookie ? [] : parseJson(cookie);
 
-  // check which workshops are in cookies
+  // check which experiences are in cookies
   const experiencesWithCookies = experiences.map((experience) => {
     const experienceFromCookies = experienceCookies.find(
       (experienceCookie) => experience.id === experienceCookie.id,
@@ -85,17 +82,7 @@ export default async function CartPage() {
       </div>
       <div className={styles.line} />
       <div className={styles.buttonContainer}>
-        <button
-          data-test-id="confirm"
-          onClick={async () => {
-            // Assuming clearCookies is a function that clears cookies
-            await clearCookies(); // Make sure to define or import clearCookies
-            router.refresh(); // Assuming this is a function to refresh the page
-            router.push('/cart/thankyou');
-          }}
-        >
-          Book Now
-        </button>
+        <CheckoutButton />
       </div>
     </div>
   );
