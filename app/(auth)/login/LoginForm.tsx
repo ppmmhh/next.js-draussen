@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { User } from '../../../database/users';
-import ErrorMessage from '../../ErrorMessage';
+import ErrorMessage from '../../components/ErrorMessage';
 import LoginButton from './LoginButton';
 import styles from './LoginForm.module.scss';
 
@@ -67,9 +67,6 @@ export default function LoginForm(props: Props) {
                 />
               </label>
             </div>
-          </div>
-
-          <div>
             <div>
               <label>
                 <div> Password</div>

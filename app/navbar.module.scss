@@ -1,0 +1,49 @@
+.navbar {
+  background-color: transparent;
+  padding: 10px;
+  position: sticky;
+  z-index: 100;
+  font-family: var(--font-mono);
+}
+
+.navBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  position: sticky;
+}
+
+.navLinks {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: medium;
+  align-items: center;
+}
+
+.navItem {
+  margin-right: 20px;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+
+.navItem a {
+  color: #22282f;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  text-transform: none;
+  align-items: center;
+}
+
+.authButton {
+  display: flex;
+  align-items: center; /* Align button vertically with other items */
+  margin-right: 20px; /* Add margin to separate button from other items */
+}
+
+.logo {
+}

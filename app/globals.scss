@@ -2,7 +2,7 @@
 
 :root {
   --max-width: 1000px;
-  --font-mono: 'quicksand';
+  --font-family: 'quicksand';
   --color-background: #edff97;
   --color-button: transparent;
   --primary-color: #000000;
@@ -19,34 +19,6 @@
 
 header {
   position: sticky;
-}
-
-nav {
-  font-family: var(--font-mono);
-  line-height: 4rem;
-  color: var(--primary-color);
-  justify-content: space-evenly;
-  padding: 1px;
-  gap: 1rem;
-  display: flex;
-  align-items: center;
-
-  .navText {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-  }
-
-  .logo {
-    width: 10rem;
-    margin-top: 0.5rem;
-    margin-left: 0.5rem;
-
-    .cart-icon {
-      display: flex;
-      align-items: center;
-    }
-  }
 }
 
 html,
@@ -90,7 +62,7 @@ button {
   font-family: var(--font-mono);
 
   &:hover {
-    background-color: edff97;
+    background-color: #edff97;
     border: 2px solid var(--color-button);
     cursor: pointer;
     color: var(--color-button);

@@ -1,12 +1,10 @@
-@import '@fontsource/quicksand';
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #add8e6;
+  background-color: lavender;
   font-family: var(--font-mono);
 }
 
@@ -34,12 +32,12 @@
   font-family: var(--font-mono);
   font-size: 16px;
   margin: 20px auto 50px; /* Updated */
-  cursor: pointer;
 
   &:hover {
     background-color: black;
-    border-color: #add8e6; /* Updated */
-    color: #add8e6;
+    border: 3px solid lavender;
+    cursor: pointer;
+    color: lavender;
   }
 }
 
