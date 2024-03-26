@@ -11,7 +11,6 @@
     "migrate": "ley --require tsx/cjs"
   },
   "dependencies": {
-    "@fontsource/m-plus-rounded-1c": "^5.0.12",
     "@fontsource/quicksand": "^5.0.17",
     "@upleveled/ley": "^0.8.6",
     "bcrypt": "^5.1.1",
