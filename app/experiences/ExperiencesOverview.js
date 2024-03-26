@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import { getExperiencesInsecure } from '../../database/experiences';
-import Navbar from '../Navbar'; // Corrected import statement
+import { getExperiencesInsecure } from '../../database/experiencesfilter';
+import ExperiencesFilter from '../components/ExperiencesFilter';
+import Navbar from '../navbar';
 import styles from './page.module.scss';
 
 export const metadata = {
@@ -14,16 +15,17 @@ export default async function ExperiencesPage() {
   const experiences = await getExperiencesInsecure();
 
   return (
-    <div className={styles.sectionContainer}>
+    <div>
       <div>
-        <header>
-          <Navbar />
-        </header>
+        <Navbar />
       </div>
-      <div>
+      <div className={styles.headline}>
         <h1>Upcoming Experiences</h1>
       </div>
       <div>
+        <div>
+          <ExperiencesFilter />
+        </div>
         <div className={styles.expContainer}>
           {experiences.map((experience) => (
             <div key={`experience-${experience.id}`}>
@@ -34,8 +36,8 @@ export default async function ExperiencesPage() {
                 <div className={styles.expImage}>
                   <Image
                     src={experience.image}
-                    width={250}
-                    height={300}
+                    width={239}
+                    height={349}
                     alt={experience.title}
                   />
                 </div>

@@ -11,7 +11,7 @@ export default function LogoutButton() {
             redirect('/login');
           }}
         >
-          Login
+          Logout
         </button>
       </form>
     </div>

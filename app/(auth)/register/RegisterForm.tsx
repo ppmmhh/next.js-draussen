@@ -3,8 +3,9 @@
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
 import { getSafeReturnToPath } from '../../../util/validation';
-import ErrorMessage from '../../ErrorMessage';
+import ErrorMessage from '../../components/ErrorMessage';
 import { RegisterResponseBodyPost } from '../api/register/route';
+import styles from './RegisterForm.module.scss';
 
 type Props = { returnTo?: string | string[] };
 
@@ -39,13 +40,6 @@ export default function RegisterForm(props: Props) {
       return;
     }
 
-    // This is not the secure way of doing returnTo
-    // router.push(`/profile/${data.user.username}`);
-    // if (props.returnTo) {
-    //   console.log('Checks Return to: ', props.returnTo);
-    //   router.push(props.returnTo);
-    // }
-
     router.push(
       getSafeReturnToPath(props.returnTo) || `/profile/${data.user.username}`,
     );
@@ -54,32 +48,55 @@ export default function RegisterForm(props: Props) {
   }
 
   return (
-    <form onSubmit={async (event) => await handleRegister(event)}>
-      <label>
-        E-Mail
-        <input onChange={(event) => setEmail(event.currentTarget.value)} />
-      </label>
+    <section>
+      <div className={styles.container}>
+        <h1 className={styles.form}>Register</h1>
 
-      <label>
-        Username
-        <input onChange={(event) => setUsername(event.currentTarget.value)} />
-      </label>
+        <form
+          className={styles.form}
+          onSubmit={async (event) => await handleRegister(event)}
+        >
+          <label>
+            E-Mail
+            <input
+              placeholder="e-mail"
+              className={styles.inputField}
+              onChange={(event) => setEmail(event.currentTarget.value)}
+            />
+          </label>
 
-      <label>
-        Password
-        <input
-          type="password"
-          onChange={(event) => setPassword(event.currentTarget.value)}
-        />
-      </label>
+          <label>
+            Username
+            <input
+              placeholder="username"
+              className={styles.inputField}
+              onChange={(event) => setUsername(event.currentTarget.value)}
+            />
+          </label>
 
-      <button>Register</button>
+          <label>
+            Password
+            <input
+              type="password"
+              placeholder="••••••••"
+              className={styles.inputField}
+              onChange={(event) => setPassword(event.currentTarget.value)}
+            />
+          </label>
 
-      {errors.map((error) => (
-        <div className="error" key={`error-${error.message}`}>
-          <ErrorMessage>{error.message}</ErrorMessage>
-        </div>
-      ))}
-    </form>
+          <button className={styles.button}>Register</button>
+
+          <p className={styles.text}>
+            Registered already? <a href="/login">Login here</a>
+          </p>
+
+          {errors.map((error) => (
+            <div className="error" key={`error-${error.message}`}>
+              <ErrorMessage>{error.message}</ErrorMessage>
+            </div>
+          ))}
+        </form>
+      </div>
+    </section>
   );
 }

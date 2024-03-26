@@ -4,7 +4,7 @@ const experiences = [
   {
     id: 1,
     title: 'Wienfluss Ride',
-    workshop_date: new Date('2030-04-30'),
+    workshop_date: '2030-04-30',
     timeframe: '10:00 - 14:00',
     meetingpoint: 'Schönbrunn',
     category: 'Ride',
@@ -15,7 +15,7 @@ const experiences = [
   {
     id: 2,
     title: 'Sophienalpe Group Hike',
-    workshop_date: new Date('2030-05-14'),
+    workshop_date: '2030-05-14',
     timeframe: '08:00 - 14:00',
     meetingpoint: 'Kasgraben',
     category: 'Hike',
@@ -26,7 +26,7 @@ const experiences = [
   {
     id: 4,
     title: 'Insel Bike Rave',
-    workshop_date: new Date('2030-05-01'),
+    workshop_date: '2030-05-01',
     timeframe: ' 16:00 - 23:00',
     meetingpoint: 'Reichsbrücke',
     category: 'Ride',
@@ -37,7 +37,7 @@ const experiences = [
   {
     id: 5,
     title: 'Leopoldstadt Art Walk',
-    workshop_date: new Date('2030-05-17'),
+    workshop_date: '2030-05-17',
     timeframe: '11:30 - 13:30',
     meetingpoint: 'Nestroyplatz',
     category: 'Walk',
@@ -48,7 +48,7 @@ const experiences = [
   {
     id: 6,
     title: ' Hameau Group Hike ',
-    workshop_date: new Date('2030-06-02'),
+    workshop_date: '2030-06-02',
     timeframe: '9:30 - 15:00',
     meetingpoint: 'Endstation Neuwaldegg',
     category: 'Hike',
