@@ -39,36 +39,41 @@ export default async function experiencePage(props) {
   });
 
   return (
-    <div className={styles.sectionContainer}>
-      <div>
+    <div className={styles.background}>
+      <div className={styles.navbarwidth}>
         <Navbar />
       </div>
-      <h1 className={styles.h1}>{singleExperience.title}</h1>
-      <div className={styles.contentBoxGrid}>
-        <div>
-          <div className={styles.textHighlight}>
-            <div>Date: {singleExperience.workshop_date}</div>
-            <div>Time: {singleExperience.timeframe}</div>
-            <div>Meetingpoint: {singleExperience.meetingpoint}</div>
-            <div>Category: {singleExperience.category}</div>
+      <div className={styles.sectionContainer}>
+        <h1 className={styles.h1}>{singleExperience.title}</h1>
+        <div className={styles.contentBoxGrid}>
+          <div>
+            <div className={styles.textHighlight}>
+              <div>Date: 15-05-2030{singleExperience.workshop_date}</div>
+              <div>Time: {singleExperience.timeframe}</div>
+              <div>
+                Meetingpoint:{' '}
+                <a href="maps.google.com">{singleExperience.meetingpoint}</a>
+              </div>
+              <div>Category: {singleExperience.category}</div>
+            </div>
+            <div className={styles.description}>
+              {singleExperience.description}
+            </div>
+            <div className={styles.bookTicketWrapper}>
+              <div>{quantitiesToDisplay?.quantity}</div>
+              <SetQuantityForm experienceID={singleExperience.id} />
+            </div>
           </div>
-          <div className={styles.description}>
-            {singleExperience.description}
+          <div className={styles.imageWrapper}>
+            <Image
+              src={singleExperience.image}
+              width={450}
+              height={500}
+              alt={singleExperience.title}
+              data-test-id="experience-image"
+            />
           </div>
         </div>
-        <div>
-          <Image
-            src={singleExperience.image}
-            width={250}
-            height={300}
-            alt={singleExperience.title}
-            data-test-id="experience-image"
-          />
-        </div>
-      </div>
-      <div className={styles.bookTicketWrapper}>
-        <div>{quantitiesToDisplay?.quantity}</div>
-        <SetQuantityForm experienceID={singleExperience.id} />
       </div>
     </div>
   );

@@ -11,15 +11,14 @@
 .logo {
   width: 100px; /* Adjust as needed */
   height: auto; /* Adjust as needed */
-  margin-left: 50px; /* Add margin to create space between logo and text */
+  margin-bottom: 20px; /* Add margin to create space between logo and text */
 }
 
 .text {
-  font-family: var(--font-mono);
-  font-size: 30px; /* Adjust as needed */
+  font-family: 'Lexend', sans-serif; /* Change font family to Lexend */
+  font-size: 36px; /* Increase font size */
   text-align: center;
-  margin-left: 150px;
-  margin-right: 150px;
+  width: 80%; /* Adjust width as needed */
   margin-bottom: 50px; /* Add margin to create space between logo and text */
 }
 
@@ -28,8 +27,8 @@ button {
   background-color: transparent;
   color: rgb(0, 0, 0);
   border: 3px solid black;
-  font-family: var(--font-mono);
-  font-size: 16px;
+  font-family: 'Lexend', sans-serif; /* Change font family to Lexend */
+  font-size: 20px; /* Increase font size */
   margin-top: 20px;
   margin-bottom: 50px;
 

@@ -1,50 +1,58 @@
-// ExperiencesFilter.js
-
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import styles from './ExperiencesFilter.module.scss';
 
 function ExperiencesFilter() {
-  // State to keep track of selected categories
   const [selectedCategories, setSelectedCategories] = useState([]);
 
-  // Function to handle checkbox change
-  const handleCategoryChange = (e) => {
-    const { value, checked } = e.target;
+  const handleCategoryChange = (event) => {
+    const { value, checked } = event.target;
 
-    // Update selected categories based on checkbox change
     if (checked) {
       setSelectedCategories((prev) => [...prev, value]);
     } else {
-      setSelectedCategories((prev) => prev.filter((cat) => cat !== value));
+      setSelectedCategories((prev) =>
+        prev.filter((category) => category !== value),
+      );
     }
   };
 
-  // Function to handle form submission
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = async (event) => {
+    event.preventDefault();
 
-    // Construct query parameter string with selected categories
-    const categoriesQueryParam = selectedCategories.join(',');
+    try {
+      const response = await fetch('/api/filter/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ categories: selectedCategories }),
+      });
 
-    // Log to ensure handleSubmit is called
-    console.log('Form submitted with selected categories:', selectedCategories);
+      console.log('Response status:', response.status);
 
-    // Handle form submission here (e.g., pass selectedCategories to a parent component)
+      if (!response.ok) {
+        throw new Error('Failed to fetch experiences');
+      }
 
-    // Optional: Clear selected categories after submission
-    setSelectedCategories([]);
+      const { experiences } = await response.json();
+      console.log(experiences, 'experience');
+
+      setSelectedCategories([]);
+    } catch (error) {
+      console.error('Error fetching experiences:', error);
+    }
   };
 
-  // Render checkbox form
   return (
     <div className={styles.filterContainer}>
       <form onSubmit={handleSubmit} className={styles.form}>
         <label>
           <input
-            type="radio"
+            type="checkbox"
             value="Hike"
+            name="Hike"
             onChange={handleCategoryChange}
             className={styles.checkField}
             checked={selectedCategories.includes('Hike')}
@@ -53,8 +61,9 @@ function ExperiencesFilter() {
         </label>
         <label>
           <input
-            type="radio"
+            type="checkbox"
             value="Ride"
+            name="Ride"
             onChange={handleCategoryChange}
             className={styles.checkField}
             checked={selectedCategories.includes('Ride')}
@@ -63,19 +72,18 @@ function ExperiencesFilter() {
         </label>
         <label>
           <input
-            type="radio"
+            type="checkbox"
             value="Walk"
+            name="Walk"
             onChange={handleCategoryChange}
             className={styles.checkField}
             checked={selectedCategories.includes('Walk')}
           />
           Walk
         </label>
-      </form>
 
-      <button className={styles.button} type="submit">
-        Filter
-      </button>
+        <button className={styles.button}>Filter</button>
+      </form>
     </div>
   );
 }

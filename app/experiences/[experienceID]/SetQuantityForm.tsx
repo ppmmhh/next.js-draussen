@@ -23,6 +23,9 @@ export default function SetQuantityForm(props: Props) {
           data-test-id="experience-quantity"
         >
           <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
         </select>
 
         <button
@@ -32,7 +35,7 @@ export default function SetQuantityForm(props: Props) {
             await addToCart(props.experienceId, Number(quantity));
           }}
         >
-          Join this Experience
+          Be there
         </button>
       </form>
     </div>

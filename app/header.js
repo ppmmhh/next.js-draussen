@@ -1,6 +1,7 @@
+import './header.scss';
 import React from 'react';
 import LoginButton from '../app/(auth)/login/LoginButton';
-import Slideshow from './components/Slideshow'; // Adjust the path accordingly
+import Slideshow from './components/slides'; // Adjust the path accordingly
 
 const images = [
   { src: '/images/wien1.jpeg', alt: 'Vienna postcard' },

@@ -1,4 +1,5 @@
 import { Sql } from 'postgres';
+import { z } from 'zod';
 
 export type Experience = {
   id: number;
@@ -10,6 +11,16 @@ export type Experience = {
   image: string;
   description: string;
 };
+
+export const experienceSchema = z.object({
+  title: z.string(),
+  workshop_date: z.string(),
+  timeframe: z.string(),
+  meetingpoint: z.string(),
+  category: z.string(),
+  image: z.string(),
+  description: z.string(),
+});
 
 export async function up(sql: Sql) {
   await sql`

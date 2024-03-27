@@ -1,13 +1,7 @@
-import './globals.scss';
-import React from 'react';
-import Header from './header';
-
-export default function Home() {
+export default function ProfilePage() {
   return (
     <div>
-      <div>
-        <Header />
-      </div>
+      <div>Hallloooooo</div>
       <footer>© draussen 2024</footer>
     </div>
   );

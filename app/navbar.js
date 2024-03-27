@@ -21,7 +21,7 @@ export default function Navbar() {
               <Link href="/experiences">Experiences</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="/">Profile</Link>
+              <Link href="/profile">Profile</Link>
             </li>
             <li className={styles.navItem}>
               <Link href="/cart">Cart</Link>

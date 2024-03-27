@@ -3,25 +3,25 @@
 @import '@fontsource-variable/lexend';
 
 .filterContainer {
-  font-family: 'Lexend'; /* Apply the 'quicksand' font */
+  font-family: 'Lexend', sans-serif;
   display: flex;
   align-items: center;
   margin: 40px 110px; /* Add margin on the sides and top */
 }
 
 .form {
-  font-family: 'Lexend'; /* Apply the 'quicksand' font */
+  font-family: 'Lexend', sans-serif;
   margin-right: 20px; /* Add space between form and button */
 }
 
 .checkField {
   margin-right: 10px; /* Add space between checkboxes */
   margin-bottom: 5px; /* Reduce space below each checkbox */
-  font-family: 'Lexend'; /* Apply the 'quicksand' font */
+  font-family: 'Lexend', sans-serif;
 }
 
 .button {
-  font-family: 'Lexend'; /* Apply the 'quicksand' font */
+  font-family: 'Lexend', sans-serif;
   padding: 4px 25px; /* Adjust padding */
   background-color: transparent;
   color: black;

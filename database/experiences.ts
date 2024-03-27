@@ -25,3 +25,18 @@ export const getExperienceInsecure = cache(async (id: number) => {
 
   return experience;
 });
+
+export const getExperiencesByCategoryInsecure = cache(
+  async (category: string) => {
+    const experiences = await sql<Experience[]>`
+      SELECT
+        *
+      FROM
+        experiences
+      WHERE
+        category = ${category}
+    `;
+
+    return experiences;
+  },
+);

@@ -43,11 +43,9 @@ export default function LoginForm(props: Props) {
       return;
     }
 
-    router.push(`/experiences`);
-    if (props.returnTo) {
-      router.push(props.returnTo);
-    }
-    router.refresh();
+    // Redirect to the returnTo path if provided, otherwise redirect to '/experiences'
+    const redirectPath = props.returnTo || '/experiences';
+    router.push(redirectPath);
   }
 
   return (

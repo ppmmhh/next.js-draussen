@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import React from 'react';
 import { getExperiencesInsecure } from '../../database/experiences';
 import ExperiencesFilter from '../components/ExperiencesFilter';
 import Navbar from '../navbar';
@@ -11,7 +10,7 @@ export const metadata = {
   description: 'Discover your next Outdoor Experience',
 };
 
-export default async function ExperiencesPage() {
+export default async function ExperiencesOverview() {
   const experiences = await getExperiencesInsecure();
 
   return (
@@ -50,7 +49,7 @@ export default async function ExperiencesPage() {
                   className={styles.expImage}
                 />
                 <div className={styles.expDescription}>
-                  <div>Date: {experience.workshop_date}</div>
+                  <div>Date: 15-05-2030{experience.workshop_date}</div>
                   <div>Time: {experience.timeframe}</div>
                 </div>
               </div>

@@ -1,14 +1,12 @@
-/* page.module.scss */
-
 @import '@fontsource-variable/lexend';
 
 .headline {
-  font-family: 'lexend';
+  font-family: 'Lexend', sans-serif;
   margin: 20px 40px; /* Add margin on the sides and top */
 }
 
 .introtext {
-  font-family: 'lexend';
+  font-family: 'Lexend', sans-serif;
   font-size: larger;
   text-align: center; /* Center the text */
   display: block; /* Display as block element */
@@ -21,6 +19,7 @@
 }
 
 .expContainer {
+  font-family: 'Lexend', sans-serif;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -46,7 +45,7 @@
 }
 
 .expDescription {
-  font-family: 'lexend';
+  font-family: 'Lexend', sans-serif;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -71,7 +70,7 @@
 }
 
 .expHeadline {
-  font-family: 'lexend';
+  font-family: 'Lexend', sans-serif;
   margin-bottom: 10px;
   text-align: center; /* Center the text */
 }

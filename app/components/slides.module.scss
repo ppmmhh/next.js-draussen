@@ -1,0 +1,17 @@
+.slideshow {
+  position: relative;
+  width: 100vw;
+  height: 900px; /* Adjust height as needed */
+  overflow: hidden;
+}
+
+.slideContainer {
+  display: flex;
+  transition: transform 0.5s ease-in-out; /* Transition for sliding effect */
+}
+
+.slideImage {
+  flex: 0 0 100vw; /* Each image takes up 100% of viewport width */
+  height: 100%;
+  object-fit: cover; /* Ensure image covers the entire slide */
+}
