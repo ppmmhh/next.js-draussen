@@ -1,7 +1,12 @@
-@import '@fontsource-variable/lexend';
+@import '@fontsource/lexend';
+
+.logo {
+  width: 100%; /* Make the logo as wide as the input fields */
+  text-align: center; /* Center the logo */
+  margin-bottom: 20px; /* Add some space between the logo and the input fields */
+}
 
 .container {
-  font-family: 'Lexend', sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +19,12 @@
 .form {
   font-family: 'Lexend', sans-serif;
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.form2 {
+  font-family: 'Lexend';
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -41,7 +52,7 @@
 
   &:hover {
     background-color: black;
-    border-color: #add8e6; /* Updated */
+    border-color: transparent;
     color: #add8e6;
   }
 }

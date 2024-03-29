@@ -14,15 +14,21 @@ export async function POST(
     // Extract the category from the request body
     const body = await request.json();
     console.log(body.categories, 'category');
-    let experiences;
-    for (const category of body.categories) {
+
+    const experiencesPromises = body.categories.map((category: string) => {
       console.log(category, 'singlecategory');
-      experiences = await getExperiencesByCategoryInsecure(category);
-    }
-    // Fetch experiences by the provided category
-    console.log(experiences, 'experiences');
+      return getExperiencesByCategoryInsecure(category);
+    });
+
+    // Wait for all experiences to be fetched
+    const experiences = await Promise.all(experiencesPromises);
+
+    // Flatten the array of arrays of experiences into a single array
+    const flattenedExperiences = experiences.flat();
+
     // Return the fetched experiences in the response
-    return NextResponse.json({ experiences });
+    console.log(flattenedExperiences, 'experiences');
+    return NextResponse.json({ experiences: flattenedExperiences });
   } catch (error) {
     // Handle errors gracefully and return an error response
     console.error('Error fetching experiences by category:', error);

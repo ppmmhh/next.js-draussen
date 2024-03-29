@@ -29,13 +29,14 @@ export default function SetQuantityForm(props: Props) {
         </select>
 
         <button
+          className={styles.button}
           data-test-id="experience-add-to-cart"
           formAction={async () => {
             router.refresh();
             await addToCart(props.experienceId, Number(quantity));
           }}
         >
-          Be there
+          Book Now
         </button>
       </form>
     </div>

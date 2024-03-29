@@ -1,10 +1,9 @@
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 import { getValidSession } from '../../database/sessions';
 import ExperiencesOverview from './ExperiencesOverview';
 
 export const metadata = {
-  title: 'Experiences Overview',
+  title: 'Experiences ',
   description: 'Discover your next Outdoor Experience',
 };
 
@@ -21,8 +20,6 @@ export default async function ExperiencesPage() {
     sessionTokenCookie && (await getValidSession(sessionTokenCookie.value));
 
   // 3. If the sessionToken cookie is invalid or doesn't exist, redirect to login with returnTo
-
-  if (!session) redirect('/login?returnTo=/experiences/');
 
   // 4. If the sessionToken cookie is valid, allow access to dashboard page
   // const hotels = await getHotels(session.token);

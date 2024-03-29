@@ -4,14 +4,14 @@ import React from 'react';
 import { getExperiencesInsecure } from '../../database/experiences';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import ChangeQuantity from './ChangeQuantity';
-import CheckoutButton from './CheckoutButton';
+import Navbar from '../navbar';
+import ChangeQuantity from './ChangeQuantity.tsx';
 import styles from './page.module.scss';
 import RemoveButton from './RemoveButton';
 
 export const metadata = {
-  title: { default: 'Cart Page' },
-  description: 'all your selected experiences',
+  title: { default: 'Cart' },
+  description: 'This page is showing your cart',
 };
 
 export default async function CartPage() {
@@ -21,7 +21,7 @@ export default async function CartPage() {
   const cookie = getCookie('cart');
   const experienceCookies = !cookie ? [] : parseJson(cookie);
 
-  // check which experiences are in cookies
+  // check which workshops are in cookies
   const experiencesWithCookies = experiences.map((experience) => {
     const experienceFromCookies = experienceCookies.find(
       (experienceCookie) => experience.id === experienceCookie.id,
@@ -34,55 +34,78 @@ export default async function CartPage() {
     (experience) => experience.quantity,
   );
 
+  const totalPrice = experiencesInCart.reduce(
+    (accumulator, experience) =>
+      accumulator + experience.price * experience.quantity,
+    0,
+  );
+
   return (
-    <div className={styles.sectionContainer}>
-      <div>
-        <h1>Your Cart:</h1>
-      </div>
-      <div className={styles.experienceContainer}>
-        {experiencesInCart.map((experience) => {
-          const experienceSubTotal = () => {
-            return Number(experience.quantity) * Number(experience.price);
-          };
-          return (
-            <div
-              key={`experience-${experience.id}`}
-              data-test-id={`cart-product-${Number(experience.id)}`}
-              className={styles.experienceItem}
-            >
-              <Link href={`/experience/${experience.id}`}>
-                <Image
-                  src={experience.image}
-                  width={250}
-                  height={300}
-                  alt={experience.title}
-                  className={styles.experienceImage}
-                />
-              </Link>
-              <div className={styles.experienceDetails}>
-                <div className={styles.headline}>
-                  <h2>{experience.title}</h2>
-                </div>
-                <div>
-                  <div>Date: {experience.workshop_date}</div>
-                  <div>Time: {experience.timeframe}</div>
-                  <div>
-                    <ChangeQuantity experience={experience} />
+    <div>
+      <Navbar />
+
+      <div className={styles.sectionContainer}>
+        <div>
+          <h1>Your Cart:</h1>
+        </div>
+        <div className={styles.productContainer}>
+          {experiencesInCart.map((experience) => {
+            const experienceSubTotal = () => {
+              return Number(experience.quantity) * Number(experience.price);
+            };
+            return (
+              <div
+                key={`experiences-${experience.id}`}
+                data-test-id={`cart-experience-${Number(experience.id)}`}
+                className={styles.productItem}
+              >
+                <Link href={`/experiences/${experience.id}`}>
+                  <Image
+                    src={experience.image}
+                    width={250}
+                    height={250}
+                    alt={experience.title}
+                    className={styles.productImage}
+                  />
+                </Link>
+                <div className={styles.productDetails}>
+                  <div className={styles.headline}>
+                    <h2>{experience.title}</h2>
                   </div>
+                  <div>
+                    <div data-test-id="experience-price">
+                      Price: EUR {experience.price}
+                    </div>
+                    <div>
+                      <ChangeQuantity experience={experience} />
+                    </div>
+                    <div>Subtotal: EUR {experienceSubTotal()}</div>
+                  </div>
+                  <div>
+                    <RemoveButton experience={experience} />
+                  </div>
+                  <br />
                 </div>
-                <div>
-                  <RemoveButton experience={experience} />
-                </div>
-                <br />
+                {/* </Link> */}
               </div>
-              {/* </Link> */}
-            </div>
-          );
-        })}
-      </div>
-      <div className={styles.line} />
-      <div className={styles.buttonContainer}>
-        <CheckoutButton />
+            );
+          })}
+        </div>
+        <div className={styles.sectionCheckout}>
+          <div className={styles.totalPrice}>
+            Total: EUR <span data-test-id="cart-total">{totalPrice}</span>
+          </div>
+          <div>
+            <Link
+              href="/checkout"
+              type="button"
+              data-test-id="cart-checkout"
+              className={styles.checkoutButton}
+            >
+              Checkout
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

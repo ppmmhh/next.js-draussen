@@ -50,13 +50,22 @@ export default function RegisterForm(props: Props) {
   return (
     <section>
       <div className={styles.container}>
+        <div>
+          <img
+            className={styles.logo}
+            src="/logo2.png"
+            width={230}
+            height={140}
+            alt="draussen Logo"
+          />
+        </div>
         <h1 className={styles.form}>Register</h1>
 
         <form
           className={styles.form}
           onSubmit={async (event) => await handleRegister(event)}
         >
-          <label>
+          <label className={styles.form2}>
             E-Mail
             <input
               placeholder="e-mail"
@@ -65,7 +74,7 @@ export default function RegisterForm(props: Props) {
             />
           </label>
 
-          <label>
+          <label className={styles.form2}>
             Username
             <input
               placeholder="username"
@@ -74,7 +83,7 @@ export default function RegisterForm(props: Props) {
             />
           </label>
 
-          <label>
+          <label className={styles.form2}>
             Password
             <input
               type="password"
@@ -84,7 +93,7 @@ export default function RegisterForm(props: Props) {
             />
           </label>
 
-          <button className={styles.button}>Register</button>
+          <button className={styles.button}>Join Us</button>
 
           <p className={styles.text}>
             Registered already? <a href="/login">Login here</a>

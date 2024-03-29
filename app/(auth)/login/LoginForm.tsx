@@ -51,22 +51,30 @@ export default function LoginForm(props: Props) {
   return (
     <section>
       <div className={styles.container}>
-        <h1 className={styles.form}>Login</h1>
+        <div>
+          <img
+            className={styles.logo}
+            src="/logo2.png"
+            width={230}
+            height={140}
+            alt="draussen Logo"
+          />
+        </div>
         <form onSubmit={async (event) => await handleLogin(event)}>
           <div>
             <div>
-              <label>
-                <div>Username</div>
+              <label className={styles.form2}>
+                <div>E-Mail or Username</div>
                 <input
-                  placeholder="username"
-                  type="username"
+                  placeholder="enter email or username"
+                  type="enter username"
                   className={styles.inputField}
                   onChange={(event) => setUsername(event.currentTarget.value)}
                 />
               </label>
             </div>
             <div>
-              <label>
+              <label className={styles.form2}>
                 <div> Password</div>
                 <input
                   placeholder="••••••••"

@@ -11,7 +11,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body>
         <main>{children}</main>
-        <footer>© draussen 2024</footer>
+        <footer />
       </body>
     </html>
   );

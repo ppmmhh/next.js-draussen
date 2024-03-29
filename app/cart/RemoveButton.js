@@ -17,7 +17,7 @@ export default function RemoveButton({ experience }) {
       <button
         onClick={handleRemoveItem}
         className={styles.removeButton}
-        data-test-id={`cart-product-remove-${Number(experience.id)}`}
+        data-test-id={`cart-experience-remove-${Number(experience.id)}`}
       >
         Remove
       </button>

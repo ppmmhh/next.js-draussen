@@ -9,17 +9,19 @@
 }
 
 .logo {
-  width: 100px; /* Adjust as needed */
-  height: auto; /* Adjust as needed */
-  margin-bottom: 20px; /* Add margin to create space between logo and text */
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-left: 700px;
 }
 
 .text {
-  font-family: 'Lexend', sans-serif; /* Change font family to Lexend */
-  font-size: 36px; /* Increase font size */
+  font-family: 'Lexend', sans-serif;
+  font-size: 36px;
   text-align: center;
-  width: 80%; /* Adjust width as needed */
-  margin-bottom: 50px; /* Add margin to create space between logo and text */
+  width: 80%;
+  margin-bottom: 50px;
 }
 
 button {

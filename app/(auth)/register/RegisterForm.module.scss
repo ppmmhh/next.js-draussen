@@ -1,3 +1,11 @@
+@import '@fontsource/lexend';
+
+.logo {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -9,11 +17,19 @@
 }
 
 .form {
+  font-family: 'Lexend', sans-serif;
   text-align: center;
   margin-bottom: 20px;
 }
 
+.form2 {
+  font-family: 'Lexend';
+  text-align: left;
+  margin-bottom: 20px;
+}
+
 .inputField {
+  font-family: 'Lexend', sans-serif;
   border: 1px solid var(--secondary-color);
   border-radius: 15px;
   padding: 10px 15px;
@@ -29,18 +45,19 @@
   background-color: transparent;
   color: rgb(0, 0, 0);
   border: 3px solid black;
-  font-family: var(--font-mono);
+  font-family: 'Lexend', sans-serif;
   font-size: 16px;
   margin: 20px auto 50px; /* Updated */
+  cursor: pointer;
 
   &:hover {
     background-color: black;
-    border: 3px solid lavender;
-    cursor: pointer;
-    color: lavender;
+    border-color: transparent;
+    color: #add8e6;
   }
 }
 
 .text {
   text-align: center;
+  font-family: 'Lexend', sans-serif;
 }

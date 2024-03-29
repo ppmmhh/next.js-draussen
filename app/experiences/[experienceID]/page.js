@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import { getExperienceInsecure } from '../../../database/experiences';
@@ -58,6 +59,14 @@ export default async function experiencePage(props) {
             </div>
             <div className={styles.description}>
               {singleExperience.description}
+              <br />
+              <br />
+              From beginners to seasoned hikers, everyone is welcome to join
+              this 11km hike.
+              <br />
+              Whether you seek solace in the quietude of the forest or crave the
+              camaraderie of like-minded souls, our group hike promises an
+              experience tailored to your needs.
             </div>
             <div className={styles.bookTicketWrapper}>
               <div>{quantitiesToDisplay?.quantity}</div>
@@ -75,6 +84,18 @@ export default async function experiencePage(props) {
           </div>
         </div>
       </div>
+      <footer className={styles.footer}>
+        <Link href="/contact">Contact</Link>
+
+        <div className="socials">
+          <img
+            src="/images/socials.png"
+            height={30}
+            width={125}
+            alt="socials"
+          />
+        </div>
+      </footer>{' '}
     </div>
   );
 }

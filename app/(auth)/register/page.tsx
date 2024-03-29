@@ -7,6 +7,11 @@ type Props = {
   };
 };
 
+export const metadata = {
+  title: 'Registration',
+  description: 'Join Us',
+};
+
 export default function RegisterPage() {
   return <RegisterForm />;
 }

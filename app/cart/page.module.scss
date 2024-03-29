@@ -1,15 +1,16 @@
 .sectionContainer {
+  font-family: var(--font-mono);
   margin-left: auto;
   margin-right: auto;
   padding: 70px;
   width: 1140px;
 
   @media (max-width: 600px) {
-    padding: 30px;
+    padding: 20px;
   }
 }
 
-.experienceContainer {
+.productContainer {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
@@ -23,7 +24,7 @@
   }
 }
 
-.experienceItem {
+.productItem {
   flex: 1 0 calc(80% - 10px);
   display: flex;
   align-items: center;
@@ -39,7 +40,7 @@
   margin: 20px auto;
 }
 
-.experienceImage {
+.productImage {
   margin-right: 20px;
 
   @media (max-width: 600px) {
@@ -49,7 +50,7 @@
   }
 }
 
-.experienceDetails {
+.productDetails {
   font-family: var(--font-family-text);
   flex-grow: 1;
   @media (max-width: 600px) {
@@ -60,7 +61,7 @@
 .removeButton {
   background-color: transparent;
   border: 1px solid var(--color-button);
-  color: var(--secondary-color);
+  color: var(--color-button);
   margin-top: 30px;
   &:hover {
     cursor: pointer;
@@ -68,32 +69,24 @@
   }
 }
 
-.buttonContainer {
+.sectionCheckout {
   justify-content: space-between;
   display: flex;
-
-  @media (max-width: 1080px) {
-    width: 30%;
-    align-items: flex-start;
-    flex-direction: column;
-  }
 }
 
-.line {
-  display: block;
-  border: 1px solid var(--secondary-color);
-  margin-bottom: 30px;
-  width: 100%;
-  @media (max-width: 1080px) {
-    width: 50%;
-    display: flex;
+.totalPrice {
+  font-family: var(--font-mono);
+  color: var(--primary-color);
+  font-size: var(--h2-size);
+  text-align: center;
+  @media (max-width: 600px) {
+    width: 20em;
   }
 }
 
 .checkoutButton {
   background-color: var(--color-button);
   color: white;
-  border-radius: 15px;
   padding: 10px 15px;
   border: 2px solid var(--color-button);
   font-family: var(--font-family-text);
@@ -106,40 +99,24 @@
     cursor: pointer;
     color: var(--color-button);
   }
-  @media (max-width: 1080px) {
-    width: 100%;
-    display: inline;
-  }
 }
 
 .changeQuantityPlus {
   padding: 4px;
-  color: var(--secondary-color);
+  color: var(--color-button);
   background-color: transparent;
-  border: 0.5px solid var(--color-button);
   display: inline-block;
   font-size: 1rem;
   margin-left: 14px;
-
-  &:hover {
-    border: 0.5px solid var(--color-button);
-    background-color: white;
-  }
 }
 
 .changeQuantityMinus {
   padding: 4px;
-  color: var(--secondary-color);
+  color: var(--color-button);
   background-color: transparent;
-  border: 0.5px solid var(--color-button);
   display: inline-block;
   font-size: 1rem;
   margin-left: 4px;
-
-  &:hover {
-    border: 0.5px solid var(--color-button);
-    background-color: white;
-  }
 }
 
 .badge {

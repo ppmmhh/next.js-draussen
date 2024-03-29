@@ -13,14 +13,14 @@ const Header = () => {
   return (
     <div className="sectionContainer">
       <div className="logo">
-        <img src="./images/logo_wo_bg.png" alt="Logo" />
+        <img src="./logo2.png" alt="Logo" width={300} />
       </div>
 
       <div className="text">
         draussen is an outdoor community dedicated to a shared natural
         experience. Together we aim to create opportunities for meaningful
-        exchange and learning through guided workshops and recreational
-        activities in nature and beyond.
+        exchange and learning through workshops and recreational activities in
+        nature and beyond.
       </div>
 
       <div>
@@ -29,7 +29,6 @@ const Header = () => {
         </a>
       </div>
 
-      {/* Include the Slideshow component and pass the images array as a prop */}
       <Slideshow images={images} />
     </div>
   );

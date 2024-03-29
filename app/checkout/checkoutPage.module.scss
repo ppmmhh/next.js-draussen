@@ -1,0 +1,81 @@
+.pageContainer {
+  font-family: var(--font-mono);
+  display: flex;
+  width: 1140px;
+  padding: 70px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.headline {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.form {
+  width: 100%;
+  margin-right: 80px;
+  text-align: left;
+}
+
+.orderSummary {
+  width: 40%;
+  margin-left: 80px;
+  padding-left: 30px;
+}
+
+.orderContainer {
+  border: 1px solid var(--secondary-color);
+  padding: 0 20px;
+}
+
+.smallContainer {
+  justify-content: space-between;
+  display: flex;
+  width: 100%;
+
+  div {
+    width: 47%;
+  }
+}
+
+.inputField {
+  border: 1px solid var(--color-button);
+  padding: 10px 15px;
+  font-family: var(--font-mono);
+  background-color: white;
+  margin: 10px;
+  flex: 1;
+  width: 100%;
+}
+
+.buttonContainer {
+  margin-top: 20px;
+  margin-right: -10px;
+  text-align: right;
+}
+
+.productDetails {
+  font-family: var(--font-mono);
+  flex-grow: 1;
+}
+
+.summaryWrapper {
+  padding: 20px;
+}
+
+.totalPrice {
+  font-family: var(--font-mono);
+  color: var(--primary-color);
+  font-size: var(--h2-size);
+  text-align: right;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  @media (max-width: 600px) {
+    width: 20em;
+  }
+}
+
+.text {
+  font-family: var(--font-mono);
+}

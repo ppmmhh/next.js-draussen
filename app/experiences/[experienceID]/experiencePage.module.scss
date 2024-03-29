@@ -1,7 +1,7 @@
-@import '@fontsource-variable/lexend';
+@import '@fontsource/lexend';
 
 .background {
-  background-color: #blue;
+  background-color: blue;
   width: 100vw;
 }
 
@@ -11,23 +11,23 @@
 
 .sectionContainer {
   color: white;
-  font-family: 'lexend', sans-serif;
+  font-family: 'Lexend', sans-serif;
   width: 1000px;
-  margin: 0 auto 50px; /* Adjust margin for top and bottom */
+  margin: 0 auto 50px;
   padding: 50px;
   text-align: left;
 }
 
 .contentBoxGrid {
   display: grid;
-  grid-template-columns: auto 450px; /* Two columns: auto and fixed width for the image */
+  grid-template-columns: auto 450px;
   gap: 1em;
   align-content: left;
   margin: 60px auto;
 }
 
 .description {
-  font-family: 'lexend', sans-serif;
+  font-family: 'Lexend', sans-serif;
   font-size: 1.2rem;
   padding: 20px;
   line-height: 130%;
@@ -35,8 +35,8 @@
 
 .h1 {
   font-size: 4rem;
-  font-family: 'lexend', sans-serif;
-  margin: 0 auto 20px; /* Adjust margin for bottom */
+  font-family: 'Lexend', sans-serif;
+  margin: 0 auto 20px;
 }
 
 .textHighlight {
@@ -44,30 +44,44 @@
   padding: 20px;
   line-height: 130%;
   color: white;
-  font-family: 'lexend', sans-serif;
-  border: 2px solid white; /* Add border */
-  border-radius: 5px; /* Add border radius */
-  margin-bottom: 20px; /* Adjust margin for bottom */
+  font-family: 'Lexend', sans-serif;
+  border: 2px solid white;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .bookTicketWrapper {
-  font-family: 'lexend', sans-serif;
-  margin: 20px auto; /* Adjust margin */
+  font-family: var(--font-mono);
+  margin: 20px;
   border-radius: 5%;
 }
 
 .button {
-  font-family: 'lexend', sans-serif;
-  font-size: 15px;
-  margin: 10px;
+  background-color: white;
+  color: black;
+  padding: 10px 45px;
+  border: 10px;
+  font-family: var(--font-mono);
+
+  &:hover {
+    background-color: blue;
+    border: 2px solid white;
+    cursor: pointer;
+    color: white;
+  }
 }
 
 .quantity {
-  font-family: 'lexend', sans-serif;
+  font-family: var(--font-mono);
   margin-right: 20px;
   padding: 10px 15px;
   border: 2px solid var(--color-button);
-  color: white;
+  color: black;
 
   &:hover {
     background-color: white;
@@ -76,7 +90,15 @@
   }
 }
 
-.imageWrapper {
+.footer {
+  width: 100vw;
+  height: 4rem;
+  position: sticky;
+  background-color: transparent;
+  font-family: 'Lexend', sans-serif;
   display: flex;
-  justify-content: flex-end; /* Align image to the right */
+  justify-content: space-around;
+  align-items: baseline;
+  margin-top: 70px;
+  margin: 0 auto;
 }

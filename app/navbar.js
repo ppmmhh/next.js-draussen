@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import styles from './navbar.module.scss';
@@ -10,7 +9,7 @@ export default function Navbar() {
         <nav className={styles.navbar}>
           <img
             className={styles.logo}
-            src="./images/logo_wo_bg.png"
+            src="/logo2.png"
             width={155}
             height={65}
             alt="draussen Logo"
@@ -30,7 +29,7 @@ export default function Navbar() {
           <div className="icon">
             <a href="/">
               <img
-                src="./images/logout.png"
+                src="/images/logout.png"
                 height={20}
                 width={20}
                 alt="logout"

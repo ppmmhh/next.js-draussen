@@ -1,0 +1,29 @@
+.marqueecontainer {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.marqueeContent {
+  display: inline-block;
+  white-space: nowrap;
+  position: absolute;
+  animation: marqueeAnimation 10s linear infinite;
+}
+
+.marqueeContent img {
+  vertical-align: middle;
+}
+
+@keyframes marqueeAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marqueecontent.cloned {
+  left: 100%; // Position the cloned content after the original content
+}
