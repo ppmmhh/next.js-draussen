@@ -33,7 +33,7 @@ export default async function ExperiencesOverview() {
       <div className={styles.headline}>
         <h1>Upcoming Experiences</h1>
       </div>
-      <div>
+      <div className={styles.expFilter}>
         <ExperiencesFilter />
       </div>
       <div className={styles.expContainer}>
