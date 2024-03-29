@@ -23,7 +23,7 @@ export default function Navbar() {
               <Link href="/profile">Profile</Link>
             </li>
             <li className={styles.navItem}>
-              <Link href="/cart">Cart</Link>
+              <Link href="/cart">Booking</Link>
             </li>
           </ul>
           <div className="icon">

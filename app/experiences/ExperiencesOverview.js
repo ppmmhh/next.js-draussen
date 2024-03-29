@@ -46,8 +46,8 @@ export default async function ExperiencesOverview() {
               <div className={styles.expContent}>
                 <Image
                   src={experience.image}
-                  width={239}
-                  height={369}
+                  width={229}
+                  height={349}
                   alt={experience.title}
                   className={styles.expImage}
                 />
