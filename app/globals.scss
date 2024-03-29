@@ -1,8 +1,8 @@
-@import '@fontsource-variable/Lexend';
+@import '@fontsource/lexend';
 
 :root {
   --max-width: 1000px;
-  --font-family: 'Lexend', sans-serif;
+  --font-family: 'lexend';
   --color-background: #edff97;
   --color-button: transparent;
   --primary-color: #000000;
@@ -38,24 +38,25 @@ footer {
   position: sticky;
   bottom: 0;
   background-color: var(--color-background);
-  font-family: var(--font-mono);
+  font-family: 'lexend';
   display: flex;
   justify-content: space-around;
   align-items: center;
+  margin-top: 10px;
 }
 
 button {
-  background-color: var(--color-button);
-  color: rgb(0, 0, 0);
+  background-color: #edff97;
+  color: #black;
   padding: 10px 45px;
   border: 10px solid var(--color-button);
   font-family: var(--font-mono);
 
   &:hover {
-    background-color: #edff97;
-    border: 2px solid var(--color-button);
+    background-color: black;
+    border: 2px solid #edff97;
     cursor: pointer;
-    color: var(--color-button);
+    color: #edff97;
   }
 }
 
